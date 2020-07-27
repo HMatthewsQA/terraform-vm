@@ -63,5 +63,5 @@ resource "azurerm_linux_virtual_machine" "example" {
 
 data "azurerm_public_ip" "example" {
   name                = azurerm_public_ip.example.name
-  resource_group_name = azurerm_linux_virtual_machine.example.resource_group_name
+  resource_group_name = var.name
 }
