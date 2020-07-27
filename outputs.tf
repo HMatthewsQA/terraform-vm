@@ -1,3 +1,3 @@
 output "public_ip" {
-  value = data.public_ip_address
+  value = module.azurevirtualmachine.public_ip_address
 }
