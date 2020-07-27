@@ -1,3 +1,3 @@
-variable "location" {
-    default     = "uksouth"
-}
+variable "location" {}
+
+variable "name" {}

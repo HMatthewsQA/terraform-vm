@@ -1,12 +1,7 @@
-variable "size" {
-  description = "machine size"
-  default     = "Standard_D1_v2"
-}
+variable "size" {}
 
-variable "user" {
-  default = "adminuser"
-}
+variable "user" {}
 
-variable "location" {
-    default     = "uksouth"
-}
+variable "location" {}
+
+variable "name" {}

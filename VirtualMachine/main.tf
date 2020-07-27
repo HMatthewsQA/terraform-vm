@@ -2,12 +2,12 @@ resource "azurerm_virtual_network" "example" {
   name                = "example-network"
   address_space       = ["10.0.0.0/16"]
   location            = var.location
-  resource_group_name = resource_group_name.example.name
+  resource_group_name = var.name
 }
 
 resource "azurerm_subnet" "example" {
   name                 = "internal"
-  resource_group_name  = resource_group_name.example.name
+  resource_group_name  = var.name
   virtual_network_name = azurerm_virtual_network.example.name
   address_prefixes     = ["10.0.2.0/24"]
 }
@@ -15,7 +15,7 @@ resource "azurerm_subnet" "example" {
 resource "azurerm_public_ip" "example" {
   name                    = "test-pip"
   location                = var.location
-  resource_group_name     = resource_group_name.example.name
+  resource_group_name     = var.name
   allocation_method       = "Dynamic"
   idle_timeout_in_minutes = 30
 }
@@ -23,7 +23,7 @@ resource "azurerm_public_ip" "example" {
 resource "azurerm_network_interface" "example" {
   name                = "example-nic"
   location            = var.location
-  resource_group_name = resource_group_name.example.name
+  resource_group_name = var.name
 
   ip_configuration {
     name                          = "internal"
@@ -35,7 +35,7 @@ resource "azurerm_network_interface" "example" {
 
 resource "azurerm_linux_virtual_machine" "example" {
   name                = "example-machine"
-  resource_group_name = resource_group_name.example.name
+  resource_group_name = var.name
   location            = var.location
   size                = var.size
   admin_username      = var.user
