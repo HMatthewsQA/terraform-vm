@@ -10,8 +10,8 @@ module "azureresourcegroup" {
 
 module "azurevirtualmachine" {
   source   = "./VirtualMachine"
-  location = "uksouth"
-  name     = "example-resources"
+  location = azureresourcegroup.location
+  name     = azureresourcegroup.name
   size     = "Standard_D1_v2"
   user     = "adminuser"
 }
