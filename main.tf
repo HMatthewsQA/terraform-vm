@@ -2,10 +2,9 @@ provider "azurerm" {
   features {}
 }
 
-module "azureresourcegroup" {
-  source   = "./ResourceGroup"
-  location = "uksouth"
+resource "azureresourcegroup" "example" {
   name     = "example-resources"
+  location = "uksouth"
 }
 
 module "azurevirtualmachine" {
