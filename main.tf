@@ -3,16 +3,16 @@ provider "azurerm" {
 }
 
 module "azureresourcegroup" {
-  source = "./ResourceGroup"
+  source   = "./ResourceGroup"
   location = "uksouth"
-  name = "example-resources"
+  name     = "example-resources"
 }
 
 module "azurevirtualmachine" {
-  source = "./VirtualMachine"
+  source   = "./VirtualMachine"
   location = "uksouth"
-  name = "example-resources"
-  size = "Standard_D1_v2"
-  user = "adminuser"
+  name     = "example-resources"
+  size     = "Standard_D1_v2"
+  user     = "adminuser"
 }
 
